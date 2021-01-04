@@ -12,7 +12,7 @@ exports.handler = async (event) => {
     let data;
 
     if(id) {
-      data = await verbModel.update(id, infinitive, singular, plural, aspect, ofMotion);
+      data = await verbModel.update( {id}, { infinitive, singular, plural, aspect, ofMotion });
     return {
       status: 200,
       body: JSON.stringify(data)
@@ -25,3 +25,5 @@ exports.handler = async (event) => {
     }
   }
 }
+
+module.exports = exports.handler;

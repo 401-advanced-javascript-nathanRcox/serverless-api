@@ -3,7 +3,10 @@
 const dynamoose = require('dynamoose');
 
 const verbSchema = new dynamoose.Schema({
-  'id': String,
+  'id': {
+    'type': String,
+    'hashkey': true
+  },
   'infinitive': String,
   'singular': { // Verb conjugations for я, ты, он/а/о.
     'type': Array,
